@@ -1,0 +1,41 @@
+name: yelpai_flutter
+description: Voice-First Business Discovery - Flutter Android App powered by Yelp AI API
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # HTTP requests
+  http: ^1.1.0
+  
+  # Speech recognition
+  speech_to_text: ^6.6.0
+  
+  # Text-to-speech
+  flutter_tts: ^3.8.3
+  
+  # Location services
+  geolocator: ^10.1.0
+  
+  # Permissions
+  permission_handler: ^11.1.0
+  
+  # State management
+  provider: ^6.1.1
+  
+  # UI
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
