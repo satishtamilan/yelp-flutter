@@ -30,6 +30,9 @@ dependencies:
   # UI
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
+  
+  # URL launcher for maps and phone
+  url_launcher: ^6.2.2
 
 dev_dependencies:
   flutter_test:
@@ -38,4 +41,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
 

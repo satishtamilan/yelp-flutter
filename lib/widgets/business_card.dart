@@ -1,15 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/business_model.dart';
 
 class BusinessCard extends StatelessWidget {
   final Business business;
   final VoidCallback onTap;
+  final VoidCallback? onBook;
 
   const BusinessCard({
     super.key,
     required this.business,
     required this.onTap,
+    this.onBook,
   });
+
+  Future<void> _openMaps() async {
+    if (business.address.isEmpty) {
+      return;
+    }
+    
+    final encodedAddress = Uri.encodeComponent(business.address);
+    final url = Uri.parse('https://www.google.com/maps/search/?api=1&query=$encodedAddress');
+    
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
+  Future<void> _makeCall(BuildContext context) async {
+    // In a real app, you'd have phone number from API
+    // For demo, show a dialog
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0xFF2d2d2d),
+        title: const Text('📞 Call Restaurant', style: TextStyle(color: Colors.white)),
+        content: Text(
+          'To call ${business.name}:\n\n'
+          '1. Check their Yelp page for phone number\n'
+          '2. Or search "${business.name}" on Yelp app',
+          style: const TextStyle(color: Colors.white70),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK', style: TextStyle(color: Color(0xFFD32323))),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +111,7 @@ class BusinessCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
               const SizedBox(height: 15),
@@ -102,6 +142,50 @@ class BusinessCard extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 15),
+              // Action Buttons
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: onBook,
+                      icon: const Icon(Icons.calendar_today, size: 16),
+                      label: const Text('Book'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFD32323),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: business.address.isNotEmpty ? _openMaps : null,
+                      icon: const Icon(Icons.directions, size: 16),
+                      label: const Text('Directions'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF2196F3),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () => _makeCall(context),
+                      icon: const Icon(Icons.phone, size: 16),
+                      label: const Text('Call'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF4CAF50),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -109,4 +193,3 @@ class BusinessCard extends StatelessWidget {
     );
   }
 }
-

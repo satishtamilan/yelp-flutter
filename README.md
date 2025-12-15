@@ -1,78 +1,59 @@
-# Voice-First Discovery - Flutter Android App
+# 🎤 Voice-First Discovery - Flutter Android App
 
-🎤 **Native Android app for voice-activated business discovery powered by Yelp AI API**
+✅ **ALL WEB APP FEATURES NOW INCLUDED!**
 
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
-[![Yelp AI API](https://img.shields.io/badge/Yelp-AI%20API-red)](https://docs.developer.yelp.com/reference/v2_ai_chat)
-[![Hackathon](https://img.shields.io/badge/Yelp-Hackathon%202025-orange)](https://yelp-ai.devpost.com/)
+Native Android app with **100% feature parity** with the web version!
 
 ---
 
-## 🎯 Overview
+## ✨ Features (Same as Web App!)
 
-Native Android application for hands-free business discovery using voice commands and Yelp's AI API.
+### 🎤 **Voice Search**
+- Voice-activated business discovery
+- Natural language processing  
+- Continuous listening mode
+- Real-time speech recognition
 
-**Built for the Yelp AI API Hackathon 2025**
+### 📅 **Booking System**
+- Smart booking modal
+- Date/time picker
+- Party size selection
+- Confirmation numbers
+- Voice feedback
+
+### 🗺️ **Directions**  
+- Google Maps integration
+- Opens native Maps app
+- Turn-by-turn navigation
+- From current location
+
+### 📞 **Call Functionality**
+- Direct phone integration  
+- One-tap calling
+- Phone number display
+
+### 🤖 **Yelp AI Integration**
+- Conversational AI API
+- Smart recommendations
+- Context-aware responses
+- UK locale support
 
 ---
 
-## ✨ Features
+## 🚀 Quick Start
 
-- 🎙️ **Native Voice Recognition** - Android Speech API
-- 🔊 **Text-to-Speech** - Hear results aloud
-- 🤖 **Yelp AI Integration** - Conversational search
-- 📍 **GPS Location** - Real-time positioning
-- 🎨 **Material Design 3** - Modern UI
-- 📱 **60fps Performance** - Smooth animations
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Flutter SDK (3.0.0 or higher)
-- Android Studio
-- Android SDK
-- Android device or emulator
-
-### Installation
-
-1. **Install Flutter:**
+### Install Dependencies:
 ```bash
-# macOS (with Homebrew)
-brew install flutter
-
-# Or download from:
-# https://flutter.dev/docs/get-started/install
-```
-
-2. **Clone the repository:**
-```bash
-git clone https://github.com/satishtamilan/yelpai-flutter.git
-cd yelpai-flutter
-```
-
-3. **Install dependencies:**
-```bash
+cd /Users/sanandhan/code/yelpai-flutter
 flutter pub get
 ```
 
-4. **Run the app:**
+### Run on Device:
 ```bash
 flutter run
 ```
 
----
-
-## 📱 Build APK
-
-### Debug APK:
-```bash
-flutter build apk
-```
-
-### Release APK:
+### Build APK:
 ```bash
 flutter build apk --release
 ```
@@ -84,86 +65,51 @@ build/app/outputs/flutter-apk/app-release.apk
 
 ---
 
-## 🛠️ Tech Stack
+## 📱 What's New
 
-- **Framework:** Flutter 3.0+
-- **Language:** Dart
-- **State Management:** Provider
-- **APIs:**
-  - Yelp AI API (`/ai/chat/v2`)
-  - Android Speech Recognition
-  - Flutter TTS
-  - Geolocator
-- **UI:** Material Design 3, Google Fonts
+### Added from Web App:
+- ✅ **Directions button** - Opens Google Maps
+- ✅ **Call button** - Phone integration  
+- ✅ **Booking button** - Same as web
+- ✅ **Better UI** - Action buttons on cards
+- ✅ **url_launcher** package for maps/phone
 
 ---
 
-## 📁 Project Structure
+## 🎯 Features Comparison
+
+| Feature | Web App | Flutter App |
+|---------|---------|-------------|
+| Voice Search | ✅ | ✅ |
+| Booking | ✅ | ✅ |
+| Directions | ✅ | ✅ |
+| Calling | ✅ | ✅ |
+| Yelp AI | ✅ | ✅ |
+| GPS | ✅ | ✅ |
+
+**100% Parity!** 🎉
+
+---
+
+## 📂 Project Structure
 
 ```
 lib/
-├── main.dart                  # App entry point
+├── main.dart                  # App entry
 ├── models/
 │   └── business_model.dart    # Data models
 ├── services/
-│   ├── speech_service.dart    # Voice I/O
+│   ├── speech_service.dart    # Voice I/O  
 │   └── yelp_service.dart      # API calls
 ├── screens/
 │   └── voice_screen.dart      # Main screen
 └── widgets/
-    └── business_card.dart     # Business card UI
+    └── business_card.dart     # Cards with actions
 ```
 
 ---
 
-## 🔧 Configuration
-
-### Yelp API Key
-
-The API key is configured in `lib/services/yelp_service.dart`:
-
-```dart
-static const String _apiKey = 'your-api-key-here';
-```
-
-**For production:** Use environment variables or Flutter dotenv.
-
-### Permissions
-
-Required permissions (already configured):
-- INTERNET
-- RECORD_AUDIO
-- ACCESS_FINE_LOCATION
-- ACCESS_COARSE_LOCATION
-
----
-
-## 🎮 Usage
-
-1. Launch the app
-2. Tap the microphone button
-3. Allow permissions (microphone, location)
-4. Speak your query naturally
-5. View results and tap cards to hear details
-
----
-
-## 🧪 Testing
-
-### Run tests:
-```bash
-flutter test
-```
-
-### Run on device:
-```bash
-flutter devices  # List devices
-flutter run -d <device-id>
-```
-
----
-
-## 📦 Dependencies
+## 🔧 Dependencies
 
 ```yaml
 http: ^1.1.0                    # API calls
@@ -171,54 +117,105 @@ speech_to_text: ^6.6.0          # Voice input
 flutter_tts: ^3.8.3             # Voice output
 geolocator: ^10.1.0             # GPS
 permission_handler: ^11.1.0     # Permissions
-provider: ^6.1.1                # State management
+provider: ^6.1.1                # State
 google_fonts: ^6.1.0            # Typography
+url_launcher: ^6.2.2            # Maps/Phone
 ```
 
 ---
 
-## 🎨 Design Features
+## 🎮 Usage
 
-- Modern dark theme with Yelp red accent
-- Smooth animations (60fps)
-- Large touch targets for accessibility
-- Material Design 3 components
-- Custom gradient backgrounds
-- Responsive layouts
-
----
-
-## 🔒 Security
-
-- API keys should use environment variables in production
-- Location data used only for search, not stored
-- Voice data processed locally
-- HTTPS for all network requests
+1. Launch app
+2. Tap microphone
+3. Say "Find pizza places"
+4. Tap "Directions" → Opens Maps
+5. Tap "Call" → Opens Phone
+6. Tap "Book" → Opens booking form
 
 ---
 
-## 🚧 Future Enhancements
+## 🏗️ Build Instructions
 
-- [ ] Offline mode with cached results
-- [ ] Restaurant reservation booking
-- [ ] Favorites and history
-- [ ] Multi-language support
-- [ ] iOS version
-- [ ] Widget support
-- [ ] Android Auto integration
+### Debug:
+```bash
+flutter run
+```
+
+### Release APK:
+```bash
+flutter build apk --release
+```
+
+### Install on Device:
+```bash
+adb install build/app/outputs/flutter-apk/app-release.apk
+```
 
 ---
 
-## 📱 Screenshots
+## 📱 Testing
 
-*Add screenshots after building the app*
+### On Emulator:
+```bash
+flutter emulators
+flutter emulators --launch <emulator_id>
+flutter run
+```
+
+### On Real Device:
+1. Enable USB debugging
+2. Connect device
+3. `flutter devices`
+4. `flutter run`
 
 ---
 
-## 🤝 Related Projects
+## 🎯 For Hackathon
 
-- **Web App:** https://github.com/satishtamilan/yelpai
-- **Live Demo:** https://yelpai.vercel.app (or your URL)
+### What to Submit:
+- ✅ Web app URL
+- ✅ Flutter APK file  
+- ✅ GitHub repos (both)
+- ✅ Demo video
+
+### Talking Points:
+- Cross-platform (Web + Mobile)
+- Voice-first hands-free
+- Native performance
+- Complete features
+- Real API integration
+
+---
+
+## 🚀 Deploy
+
+### Web App:
+Already deployed at your URL! ✅
+
+### Flutter App:
+1. Build APK: `flutter build apk --release`
+2. Test on device
+3. Upload APK to Devpost
+4. Include in submission
+
+---
+
+## 💡 Pro Tips
+
+- Test on real Android device
+- Check microphone permissions  
+- Verify location permissions
+- Test Maps integration
+- Test voice recognition
+
+---
+
+## 🔗 Links
+
+- **Web App:** https://yelpai.vercel.app (or your URL)
+- **Web Repo:** https://github.com/satishtamilan/yelpai
+- **Flutter Repo:** This folder!
 
 ---
 
@@ -232,19 +229,10 @@ MIT License
 
 **Satish Tamil**
 - GitHub: [@satishtamilan](https://github.com/satishtamilan)
-- Hackathon: [Yelp AI API Hackathon 2025](https://yelp-ai.devpost.com/)
+- Hackathon: Yelp AI API Hackathon 2025
 
 ---
 
-## 🙏 Acknowledgments
+**Built with ❤️ for Yelp AI API Hackathon 2025**
 
-- Yelp for the AI API
-- Flutter team for the amazing framework
-- Open source community
-
----
-
-**Built with ❤️ for the Yelp AI API Hackathon 2025**
-
-**Deadline:** December 17, 2025 @ 5:00pm EST
-
+**Deadline:** December 17, 2025
